@@ -1,3 +1,10 @@
+/*
+  Projeto M1 - Plataforma de Aluguel de Imóveis
+  Autores: Davi d'Ávila, Henrique Braz
+  Data: 31/03/2025
+  sistema.h
+*/
+
 #ifndef SISTEMA_H
 #define SISTEMA_H
 
