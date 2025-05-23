@@ -22,6 +22,20 @@ public:
     unsigned getId() const {
         return id;
     }
+    void avaliar(unsigned nota){
+        avaliacao.push_back(nota);
+    }
+
+    unsigned mediaAvaliacoes(){
+        unsigned media = 0;
+        if (avaliacao.empty()) {
+            return 0;
+        }
+        for (unsigned nota : avaliacao) {
+            media += nota;
+        }
+        return media / avaliacao.size();
+    }
 
     bool operator==(const Imovel& outro) const {
         return this->id == outro.id;
@@ -38,6 +52,9 @@ public:
     unsigned getId() const {
         return id;
     }
+    void avaliar(unsigned nota){
+        imovel->avaliar(nota);
+    }
 
     bool operator==(const Reserva& outro) const {
         return this->id == outro.id;
@@ -53,6 +70,9 @@ class Usuario {
 public:
     unsigned getId() const {
         return id;
+    }
+    void avaliar(Reserva reserva, unsigned nota){
+        reserva.avaliar(nota);
     }
 
     bool operator==(const Usuario& outro) const {
